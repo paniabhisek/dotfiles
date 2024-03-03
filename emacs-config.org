@@ -67,6 +67,8 @@
 * General
 
 ** Setting paths
+   Emacs needs linux diff utility for ediff to work.
+   Provide the path to it.
    #+begin_src emacs-lisp
    (add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
    #+end_src
