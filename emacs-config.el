@@ -6,8 +6,6 @@
   :config
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
-;;(use-package org
-;;  :config
 (fset 'getlink
       (lambda (&optional arg) 
 	"Keyboard macro." 

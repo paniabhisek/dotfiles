@@ -24,8 +24,6 @@
   link: [[https://lists.gnu.org/archive/html/emacs-orgmode/2011-06/msg00712.html]]
   :END:
   #+begin_src emacs-lisp
-    ;;(use-package org
-    ;;  :config
     (fset 'getlink
 	  (lambda (&optional arg) 
 	    "Keyboard macro." 
