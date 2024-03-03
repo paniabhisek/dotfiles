@@ -74,6 +74,9 @@
    #+end_src
 
 ** yasnippet
+   :DRAWER:
+   Tab key link: [[https://orgmode.org/worg/org-faq.html#YASnippet]]
+   :END:
    #+begin_src emacs-lisp
    (use-package yasnippet
      :ensure t
