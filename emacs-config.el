@@ -1,6 +1,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa")
 (load-theme 'monotropic t)
 
+(set-frame-font "Iosevka" nil t)
+
 (use-package all-the-icons
   :if (display-graphic-p)
   :config
@@ -22,6 +24,11 @@
 (require 'org-journal)
 
 (set-register ?H '(file . "d:/schedules/home-life.org"))
+
+(use-package org-modern
+  :hook
+  (org-mode . org-modern-mode)
+  (org-agenda-finalize . org-modern-mode))
 
 (require 'eval-in-repl)
 (require 'python) ; if not done elsewhere

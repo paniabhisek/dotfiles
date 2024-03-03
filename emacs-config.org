@@ -12,6 +12,12 @@
   #+end_src
 
 ** Fonts
+   Set default typeface
+   #+begin_src emacs-lisp
+   (set-frame-font "Iosevka" nil t)
+   #+end_src
+
+   Put icons on dired mode
    #+begin_src emacs-lisp
    (use-package all-the-icons
      :if (display-graphic-p)
@@ -50,6 +56,17 @@
 ** Register
    #+begin_src emacs-lisp
    (set-register ?H '(file . "d:/schedules/home-life.org"))
+   #+end_src
+
+** Theme
+   :DRAWER:
+   Link: https://github.com/minad/org-modern/
+   :END:
+   #+begin_src emacs-lisp
+  (use-package org-modern
+    :hook
+    (org-mode . org-modern-mode)
+    (org-agenda-finalize . org-modern-mode))
    #+end_src
 
 * Python
