@@ -15,6 +15,9 @@
 	(kmacro-exec-ring-item (quote ("\C-c\C-l\C-a\C-k\C-g" 0 "%d")) arg)))
 (define-key org-mode-map (kbd "C-c l") #'getlink)
 
+(with-eval-after-load 'org
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (global-set-key (kbd "C-c j") 'org-journal-new-entry)

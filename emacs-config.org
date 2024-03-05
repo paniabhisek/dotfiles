@@ -41,6 +41,17 @@
     (define-key org-mode-map (kbd "C-c l") #'getlink)
   #+end_src
 
+Set soft word wrap for a line.
+:DRAWER:
+Description: load the hook after org is loaded
+Link: [[https://emacs.stackexchange.com/questions/22179/enable-visual-line-mode-and-org-indent-mode-when-opening-org-files][stack exchange]]
+:END:
+#+begin_src emacs-lisp
+  (with-eval-after-load 'org
+    (add-hook 'org-mode-hook #'visual-line-mode))
+#+end_src
+
+
 
 ** Org Agenda
    #+begin_src emacs-lisp
