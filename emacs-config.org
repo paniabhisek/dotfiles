@@ -15,9 +15,10 @@
    Set default typeface
    :DRAWER:
    Link: https://www.reddit.com/r/emacs/comments/xybrtw/comment/irhc8r7/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+   Format: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
    :END:
    #+begin_src emacs-lisp
-   (set-frame-font "Iosevka" nil t)
+   (set-frame-font "Iosevka 12" nil t)
    #+end_src
 
    Put icons on dired mode

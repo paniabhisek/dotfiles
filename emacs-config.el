@@ -1,7 +1,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa")
 (load-theme 'monotropic t)
 
-(set-frame-font "Iosevka" nil t)
+(set-frame-font "Iosevka 12" nil t)
 
 (use-package all-the-icons
   :if (display-graphic-p)
