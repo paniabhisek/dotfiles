@@ -18,6 +18,10 @@
 (with-eval-after-load 'org
   (add-hook 'org-mode-hook #'visual-line-mode))
 
+(with-eval-after-load 'org
+  (add-hook 'org-mode-hook #'org-appear-mode)
+  (setq org-appear-autolinks t))
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (global-set-key (kbd "C-c j") 'org-journal-new-entry)

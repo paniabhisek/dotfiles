@@ -51,6 +51,13 @@ Link: [[https://emacs.stackexchange.com/questions/22179/enable-visual-line-mode-
     (add-hook 'org-mode-hook #'visual-line-mode))
 #+end_src
 
+Org Appear
+Only Toggle links. Check the documentation for other possibilities
+#+begin_src emacs-lisp
+  (with-eval-after-load 'org
+    (add-hook 'org-mode-hook #'org-appear-mode)
+    (setq org-appear-autolinks t))
+#+end_src
 
 
 ** Org Agenda
