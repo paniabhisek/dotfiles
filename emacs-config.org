@@ -106,11 +106,6 @@ Only Toggle links. Check the documentation for other possibilities
 * General
 
 ** Setting paths
-   Emacs needs linux diff utility for ediff to work.
-   Provide the path to it.
-   #+begin_src emacs-lisp
-   (add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
-   #+end_src
 
 ** yasnippet
    :DRAWER:
@@ -137,12 +132,6 @@ Only Toggle links. Check the documentation for other possibilities
      (yas-reload-all))
    #+end_src
 
-** Upcase and Downcase
-   #+begin_src emacs-lisp
-   (put 'upcase-region 'disabled nil)
-   (put 'downcase-region 'disabled nil)
-   #+end_src
-
 ** Tree Sitter
    #+begin_src emacs-lisp
    ;; tree sitter
@@ -161,3 +150,23 @@ Only Toggle links. Check the documentation for other possibilities
    (require 'tree-sitter-langs)
    #+end_src
 
+** Miscellaneous
+
+Upcase and Downcase
+#+begin_src emacs-lisp
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+#+end_src
+
+Emacs needs linux diff utility for ediff to work.
+Provide the path to it.
+#+begin_src emacs-lisp
+  (add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
+#+end_src
+
+Remove Menu bar and Tool bar. Stop blinking of cursor
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (setq blink-cursor-mode nil)
+#+end_src

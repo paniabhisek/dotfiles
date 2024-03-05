@@ -46,8 +46,6 @@
 
 (setq-default py-shell-name "d:/envs/emacs/Scripts/python.exe")
 
-(add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
-
 (use-package yasnippet
   :ensure t
   :config
@@ -67,9 +65,6 @@
 	      (define-key yas/keymap [tab] 'yas/next-field)))
   (yas-reload-all))
 
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-
 ;; tree sitter
 ;; (use-package tree-sitter
 ;;   :hook
@@ -84,3 +79,12 @@
 ;;   :after tree-sitter)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(add-to-list 'exec-path "C:/Program Files/Git/usr/bin")
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(setq blink-cursor-mode nil)
