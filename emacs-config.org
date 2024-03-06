@@ -21,7 +21,7 @@
    Format: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
    :END:
    #+begin_src emacs-lisp
-   (set-frame-font "Iosevka 12" nil t)
+   (set-frame-font "Iosevka 13" nil t)
    #+end_src
 
    Put icons on dired mode

@@ -2,7 +2,7 @@
 (load-file "~/.emacs.d/elpa/bespoke-themes/bespoke-themes.el")
 (load-theme 'bespoke t)
 
-(set-frame-font "Iosevka 12" nil t)
+(set-frame-font "Iosevka 13" nil t)
 
 (use-package all-the-icons
   :if (display-graphic-p)
