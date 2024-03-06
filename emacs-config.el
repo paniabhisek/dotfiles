@@ -1,5 +1,6 @@
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa")
-(load-theme 'monotropic t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/bespoke-themes")
+(load-file "~/.emacs.d/elpa/bespoke-themes/bespoke-themes.el")
+(load-theme 'bespoke t)
 
 (set-frame-font "Iosevka 12" nil t)
 
