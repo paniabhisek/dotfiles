@@ -3,15 +3,8 @@
 #+PROPERTY: header-args :tangle yes
 
 * Themes
-  :DRAWER:
-  Link: https://github.com/mclear-tools/bespoke-themes
-  :END:
-  This theme is not present on MELPA. It also can not find bespoke-themes.el
-  on path.
   #+begin_src emacs-lisp
-    (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/bespoke-themes")
-    (load-file "~/.emacs.d/elpa/bespoke-themes/bespoke-themes.el")
-    (load-theme 'bespoke t)
+  (load-theme 'leuven t)
   #+end_src
 
 ** Fonts

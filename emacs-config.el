@@ -1,6 +1,4 @@
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/bespoke-themes")
-(load-file "~/.emacs.d/elpa/bespoke-themes/bespoke-themes.el")
-(load-theme 'bespoke t)
+(load-theme 'leuven t)
 
 (set-frame-font "Iosevka 13" nil t)
 
