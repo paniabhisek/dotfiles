@@ -1,0 +1,167 @@
+#+TITLE: All .emacs configurations
+#+AUTHOR: Abhisek Panigrahi
+#+PROPERTY: header-args :tangle yes
+
+* General
+
+** yasnippet
+   :DRAWER:
+   Tab key link: [[https://orgmode.org/worg/org-faq.html#YASnippet]]
+   :END:
+   #+begin_src emacs-lisp
+   (use-package yasnippet
+     :ensure t
+     :config
+     (use-package yasnippet-snippets
+       :ensure t)
+     (add-hook 'python-mode-hook #'yas-minor-mode)
+     (add-hook 'org-mode-hook #'yas-minor-mode)
+     (defun yas/org-very-safe-expand ()
+       (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
+     (add-hook 'org-mode-hook
+               (lambda ()
+                 ;; yasnippet (using the new org-cycle hooks)
+		 (make-variable-buffer-local 'yas/trigger-key)
+		 (setq yas/trigger-key [tab])
+		 (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+		 (define-key yas/keymap [tab] 'yas/next-field)))
+     (yas-reload-all))
+   #+end_src
+
+** Tree Sitter
+   #+begin_src emacs-lisp
+   ;; tree sitter
+   ;; (use-package tree-sitter
+   ;;   :hook
+   ;;   (python-mode . tree-sitter-hl-mode))
+
+   ;; (use-package tree-sitter-langs)
+   ;;  :after tree-sitter)
+   ;;(require 'tree-sitter)
+   ;;(require 'tree-sitter-langs)
+   ;; (use-package ts-fold
+   ;;   :load-path "~/.emacs.d/elpa/ts-fold/"
+   ;;   :after tree-sitter)
+   (require 'tree-sitter)
+   (require 'tree-sitter-langs)
+   #+end_src
+
+** Miscellaneous
+
+Upcase and Downcase
+#+begin_src emacs-lisp
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+#+end_src
+
+Remove Menu bar and Tool bar. Stop blinking of cursor
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (setq blink-cursor-mode nil)
+#+end_src
+
+Load environment variables
+#+begin_src emacs-lisp
+  (use-package load-env-vars)
+  (load-env-vars "~/.emacs.d/.emacs.env")
+#+end_src
+
+* Themes
+  #+begin_src emacs-lisp
+  (load-theme 'chocolate t)
+  #+end_src
+
+** Fonts
+   Set default typeface
+   :DRAWER:
+   Link: https://www.reddit.com/r/emacs/comments/xybrtw/comment/irhc8r7/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+   Format: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
+   :END:
+   #+begin_src emacs-lisp
+  (setq default-frame-alist '((font . "JetBrains Mono")))
+   #+end_src
+
+   Put icons on dired mode
+   #+begin_src emacs-lisp
+   (use-package all-the-icons
+     :if (display-graphic-p)
+     :config
+     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+   #+end_src
+
+* Org Mode
+  :DRAWER:
+  link: [[https://lists.gnu.org/archive/html/emacs-orgmode/2011-06/msg00712.html]]
+  :END:
+  #+begin_src emacs-lisp
+    (fset 'getlink
+	  (lambda (&optional arg) 
+	    "Keyboard macro." 
+	    (interactive "p") 
+	    (kmacro-exec-ring-item (quote ("\C-c\C-l\C-a\C-k\C-g" 0 "%d")) arg)))
+    (define-key org-mode-map (kbd "C-c l") #'getlink)
+  #+end_src
+
+Set soft word wrap for a line.
+:DRAWER:
+Description: load the hook after org is loaded
+Link: [[https://emacs.stackexchange.com/questions/22179/enable-visual-line-mode-and-org-indent-mode-when-opening-org-files][stack exchange]]
+:END:
+#+begin_src emacs-lisp
+  (with-eval-after-load 'org
+    (add-hook 'org-mode-hook #'visual-line-mode))
+#+end_src
+
+Org Appear
+Only Toggle links. Check the documentation for other possibilities
+#+begin_src emacs-lisp
+  (with-eval-after-load 'org
+    (add-hook 'org-mode-hook #'org-appear-mode)
+    (setq org-appear-autolinks t))
+#+end_src
+
+
+** Org Agenda
+   #+begin_src emacs-lisp
+   (global-set-key (kbd "C-c a") 'org-agenda)
+   #+end_src
+
+** Org Journal
+   #+begin_src emacs-lisp
+   (global-set-key (kbd "C-c j") 'org-journal-new-entry)
+   (setq org-journal-dir (getenv "ORG_JOURNAL_DIR"))
+   (setq org-journal-date-format "%A, %d %B %Y")
+   (setq org-journal-file-format "%F")
+   (require 'org-journal)
+   #+end_src
+
+** Register
+   #+begin_src emacs-lisp
+   (set-register ?H (cons 'file (getenv "HOME_LIFE")))
+   #+end_src
+
+** Theme
+   :DRAWER:
+   Link: https://github.com/minad/org-modern/
+   :END:
+   #+begin_src emacs-lisp
+  (use-package org-modern
+    :hook
+    (org-mode . org-modern-mode)
+    (org-agenda-finalize . org-modern-agenda))
+   #+end_src
+
+* Python
+  #+begin_src emacs-lisp
+  (require 'eval-in-repl)
+  (require 'python) ; if not done elsewhere
+  (require 'eval-in-repl-python)
+  (add-hook 'python-mode-hook
+            '(lambda ()
+	    (local-set-key (kbd "<C-return>") 'eir-eval-in-python)))
+
+  (setq-default py-shell-name "/usr/bin/python3")
+  #+end_src
+
