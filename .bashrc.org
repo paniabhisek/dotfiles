@@ -1,0 +1,12 @@
+#+title: All .bashrc configurations
+#+author: Abhisek Panigrahi
+#+property: header-args :tangle ~/.config/dotfiles/.bashrc
+
+* Aliases
+
+** emacs
+
+#+begin_src bash
+  alias e="emacsclient -n -c ."
+#+end_src
+
