@@ -10,3 +10,11 @@
   alias e="emacsclient -n -c"
 #+end_src
 
+* Paths
+
+Add path for user-specific executable files
+
+#+begin_src bash
+  export PATH=~/.local/bin:$PATH
+#+end_src
+
