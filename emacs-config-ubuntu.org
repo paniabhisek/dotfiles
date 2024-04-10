@@ -85,10 +85,9 @@ Load environment variables
 
    Put icons on dired mode
    #+begin_src emacs-lisp
-   (use-package all-the-icons
-     :if (display-graphic-p)
-     :config
-     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+  (use-package all-the-icons
+    :config
+    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
    #+end_src
 
 * Org Mode
