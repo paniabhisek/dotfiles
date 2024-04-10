@@ -18,3 +18,8 @@ Add path for user-specific executable files
   export PATH=~/.local/bin:$PATH
 #+end_src
 
+* EDITOR environment variable
+
+#+begin_src bash
+  EDITOR="emacsclient -c"
+#+end_src
