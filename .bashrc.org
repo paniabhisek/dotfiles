@@ -21,7 +21,7 @@ Add path for user-specific executable files
 * EDITOR environment variable
 
 #+begin_src bash
-  EDITOR="emacsclient -c"
+  export EDITOR="emacsclient -c"
 #+end_src
 
 * Zoxide to navigate terminal
