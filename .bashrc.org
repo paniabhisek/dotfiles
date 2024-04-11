@@ -30,3 +30,12 @@ Add path for user-specific executable files
   eval "$(zoxide init bash)"
 #+end_src
 
+* Bash prompt
+
+I am using [[https://github.com/ohmybash/oh-my-bash][oh-my-bash]] prompt. Install using ~git clone https://github.com/ohmybash/oh-my-bash.git ~/libraries/.oh-my-bash~. After that, Run ~cp ~/libraries/.oh-my-bash/templates/bashrc.osh-template ~/libraries/.osh.bashrc~. Then source the file.
+
+#+begin_src bash
+  . ~/libraries/.osh.bashrc
+#+end_src
+
+
