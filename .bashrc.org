@@ -23,3 +23,10 @@ Add path for user-specific executable files
 #+begin_src bash
   EDITOR="emacsclient -c"
 #+end_src
+
+* Zoxide to navigate terminal
+
+#+begin_src bash
+  eval "$(zoxide init bash)"
+#+end_src
+
