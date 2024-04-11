@@ -1,0 +1,50 @@
+#+title: All .tmux.conf configurations
+#+author: Abhisek Panigrahi
+#+property: header-args :tangle ~/.config/tmux/.tmux.conf
+
+* Essential plugins
+
+#+begin_src tmux
+  set -g @plugin 'tmux-plugins/tpm'
+  set -g @plugin 'tmux-plugins/tmux-sensible'
+#+end_src
+
+* Theme
+
+#+begin_src tmux
+  set -g @plugin 'rose-pine/tmux'
+
+  set -g @rose_pine_variant 'main'
+#+end_src
+
+* Load .bashrc in tmux
+tmux uses login shell which does not load .bashrc(nologin shell)
+
+#+begin_src tmux
+  set-option -g default-command bash
+#+end_src
+
+* Pane navigation
+
+#+begin_src tmux
+  bind-key h select-pane -L
+  bind-key l select-pane -R
+  bind-key k select-pane -U
+  bind-key j select-pane -D
+#+end_src
+
+* Split panes
+
+#+begin_src tmux
+  bind-key "|" split-window -h -c "#{pane_current_path}"
+  bind-key "\\" split-window -fh -c "#{pane_current_path}"
+
+  bind-key "-" split-window -v -c "#{pane_current_path}"
+  bind-key "_" split-window -fv -c "#{pane_current_path}"
+#+end_src
+
+* Run tmux plugin manager
+
+#+begin_src tmux
+  run '~/.tmux/plugins/tpm/tpm'
+#+end_src
