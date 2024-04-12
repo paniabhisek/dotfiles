@@ -76,11 +76,19 @@ Load environment variables
 ** Fonts
    Set default typeface
    :DRAWER:
+   ~set-frame-font~ does not apply to the new frames. So it does not work in emacsclient
    Link: https://www.reddit.com/r/emacs/comments/xybrtw/comment/irhc8r7/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
    Format: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
    :END:
+
+   The recommended settings for [[https://www.jetbrains.com/lp/mono/][JetBrains Mono]] are size: 13 and line spacing: 1.2. The way to set line spacing in emacs can be found at [[https://github.com/syl20bnr/spacemacs/issues/10502#issuecomment-404453194][text-spacing-with-vertically-centered]].
+
    #+begin_src emacs-lisp
-  (setq default-frame-alist '((font . "JetBrains Mono")))
+  (defun set-bigger-spacing ()
+    (setq-local default-text-properties '(line-spacing 0.1 line-height 1.1)))
+  (add-hook 'text-mode-hook 'set-bigger-spacing)
+  (add-hook 'prog-mode-hook 'set-bigger-spacing)
+  (setq default-frame-alist '((font . "JetBrains Mono 13")))
    #+end_src
 
    Put icons on dired mode

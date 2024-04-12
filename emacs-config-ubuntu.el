@@ -44,7 +44,11 @@
 
 (load-theme 'chocolate t)
 
-(setq default-frame-alist '((font . "JetBrains Mono")))
+(defun set-bigger-spacing ()
+  (setq-local default-text-properties '(line-spacing 0.1 line-height 1.1)))
+(add-hook 'text-mode-hook 'set-bigger-spacing)
+(add-hook 'prog-mode-hook 'set-bigger-spacing)
+(setq default-frame-alist '((font . "JetBrains Mono 13")))
 
 (use-package all-the-icons
   :config
