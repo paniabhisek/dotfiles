@@ -1,6 +1,6 @@
 #+title: All .tmux.conf configurations
 #+author: Abhisek Panigrahi
-#+property: header-args :tangle ~/.config/tmux/.tmux.conf
+#+property: header-args :tangle ~/.config/tmux/tmux.conf
 
 * Essential plugins
 
