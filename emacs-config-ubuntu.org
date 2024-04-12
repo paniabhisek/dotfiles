@@ -81,7 +81,7 @@ Load environment variables
    Format: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
    :END:
 
-   The recommended settings for [[https://www.jetbrains.com/lp/mono/][JetBrains Mono]] are size: 13 and line spacing: 1.2. The way to set line spacing in emacs can be found at [[https://github.com/syl20bnr/spacemacs/issues/10502#issuecomment-404453194][text-spacing-with-vertically-centered]].
+   The [[https://www.jetbrains.com/lp/mono/][recommended]] settings for JetBrains Mono are size: 13 and line spacing: 1.2. The way to set line spacing in emacs can be found at [[https://github.com/syl20bnr/spacemacs/issues/10502#issuecomment-404453194][text-spacing-with-vertically-centered]].
 
    #+begin_src emacs-lisp
   (defun set-bigger-spacing ()
