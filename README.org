@@ -1,0 +1,1 @@
+Github renders a single newline as part of the paragraph. So what I write on my emacs Org document does not come out properly on Github. Certainly, drawers will not work for anyone. I like how it renders on my emacs, so not going to change the format of writing.
