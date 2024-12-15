@@ -1,3 +1,4 @@
+#+STARTUP: content
 #+TITLE: All .emacs configurations
 #+AUTHOR: Abhisek Panigrahi
 #+PROPERTY: header-args :tangle yes

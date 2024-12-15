@@ -1,3 +1,4 @@
+#+STARTUP: content
 #+title: All .bashrc configurations
 #+author: Abhisek Panigrahi
 #+property: header-args :tangle ~/.config/dotfiles/.bashrc
