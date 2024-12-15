@@ -91,3 +91,5 @@
 	  (local-set-key (kbd "<C-return>") 'eir-eval-in-python)))
 
 (setq-default py-shell-name "/usr/bin/python3")
+
+(add-to-list 'exec-path (getenv "HASKELL_PATH"))

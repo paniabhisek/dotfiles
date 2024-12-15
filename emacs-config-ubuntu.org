@@ -173,3 +173,7 @@ Only Toggle links. Check the documentation for other possibilities
   (setq-default py-shell-name "/usr/bin/python3")
   #+end_src
 
+* Haskell
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'exec-path (getenv "HASKELL_PATH"))
+#+END_SRC
