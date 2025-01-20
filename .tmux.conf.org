@@ -8,6 +8,7 @@
 #+begin_src tmux
   set -g @plugin 'tmux-plugins/tpm'
   set -g @plugin 'tmux-plugins/tmux-sensible'
+  set -g @plugin 'tmux-plugins/tmux-resurrect'
 #+end_src
 
 * Theme
@@ -34,6 +35,13 @@ tmux uses login shell which does not load .bashrc(nologin shell)
 
 #+begin_src tmux
   set-option -g default-command bash
+#+end_src
+
+* Changeable tmux codes
+Things which can change over time like tmux resurrect programs.
+
+#+begin_src tmux
+  source-file ~/.config/tmux/tmux.conf.unsettled
 #+end_src
 
 * Pane navigation
