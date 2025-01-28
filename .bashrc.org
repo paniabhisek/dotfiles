@@ -19,6 +19,12 @@ Add path for user-specific executable files
   export PATH=~/.local/bin:$PATH
 #+end_src
 
+Add for tmuxifier
+
+#+begin_src bash
+  export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
+#+end_src
+
 * EDITOR environment variable
 
 #+begin_src bash
@@ -39,4 +45,8 @@ I am using [[https://github.com/ohmybash/oh-my-bash][oh-my-bash]] prompt. Instal
   . ~/libraries/.osh.bashrc
 #+end_src
 
+* Initialize tmuxifier
 
+#+begin_src bash
+  eval "$(tmuxifier init -)"
+#+end_src
