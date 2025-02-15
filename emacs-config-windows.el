@@ -65,7 +65,16 @@
 
 (with-eval-after-load 'org
   (add-hook 'org-mode-hook #'org-appear-mode)
-  (setq org-appear-autolinks t))
+  ;; toggle emphasis markers
+  (setq org-hide-emphasis-markers t)
+  (setq org-appear-autoemphasis t)
+  ;; toggle links
+  (setq org-appear-autolinks t)
+  ;; toggle subscripts and superscripts
+  (setq org-pretty-entities t)
+  (setq org-appear-autosubmarkers t)
+  ;; toggle Org entitites
+  (setq org-appear-autoentities t))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 

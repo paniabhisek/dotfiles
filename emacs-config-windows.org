@@ -124,11 +124,19 @@ Link: [[https://emacs.stackexchange.com/questions/22179/enable-visual-line-mode-
 #+end_src
 
 Org Appear
-Only Toggle links. Check the documentation for other possibilities
 #+begin_src emacs-lisp
   (with-eval-after-load 'org
     (add-hook 'org-mode-hook #'org-appear-mode)
-    (setq org-appear-autolinks t))
+    ;; toggle emphasis markers
+    (setq org-hide-emphasis-markers t)
+    (setq org-appear-autoemphasis t)
+    ;; toggle links
+    (setq org-appear-autolinks t)
+    ;; toggle subscripts and superscripts
+    (setq org-pretty-entities t)
+    (setq org-appear-autosubmarkers t)
+    ;; toggle Org entitites
+    (setq org-appear-autoentities t))
 #+end_src
 
 
